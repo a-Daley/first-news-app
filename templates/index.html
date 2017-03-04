@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename= 'style.css') }}">
 	</head>
 
 	<body>
-		<h1>Deaths During The L.A. Riots</h1>
+		<h1 class="main">Deaths During The L.A. Riots</h1>
 		<table border=1 cellpadding=7>
 			<tr>
 				<th>Name</th>
@@ -19,7 +19,7 @@
 			
 			{% for obj in object_list %}
 			<tr>
-				<td>{{ obj.full_name }}</td>
+				<td><a href="/{{ obj.id }}/">{{ obj.full_name }}</a></td>
 				<td>{{ obj.date }}</td>
 				<td>{{ obj.age }}</td>
 				<td>{{ obj.address }}</td>
